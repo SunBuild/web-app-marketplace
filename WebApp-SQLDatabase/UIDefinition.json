@@ -1,0 +1,110 @@
+{
+  "$schema": "https://gallery.azure.com/schemas/2015-02-12/UIDefinition.json",
+  "createDefinition": {
+    "createBlade": {
+      "name": "CreateBlade",
+      "extension": "WebsitesExtension"
+    },
+    "startboardPart": {
+      "name": "SingleWebsitePart",
+      "extension": "WebsitesExtension"
+    },
+    "startboardPartKeyId": "id"
+  },
+  "initialData": {
+    "mysql": false,
+    "sql": true,
+    "msDeploySettings": {
+      "msDeployPackage": "https://example.com/myapplication1.2.0.zip",
+      "parameters": {
+        "database Username": {
+          "defaultValue": "umbracouser",
+          "parameterValue": "Database Username",
+          "displayName": "Database Username",
+          "hidden": true,
+          "nonAdminUsername" : true, 
+          "description": "User name to access you application database.",
+          "toolTip": "User name to access you application database.",
+          "type": "text",
+          "constraints": {
+            "required": true,
+            "hidden": false,
+            "allowedValues": [],
+            "hasDigit": false,
+            "hasLetter": false,
+            "hasUpperCaseLetter": false,
+            "hasLowerCaseLetter": false,
+            "hasPunctuation": false,
+            "numeric": false,
+            "custom": []
+          }
+        },
+        "database Password": {
+          "parameterValue": "Database Password",
+          "displayName": "Database Password",
+          "hidden": true,
+          "description": "Enter Password for the Database Username. Passwords will contain at least 1 upper case letter, at least 1 lower case letter, at least 1 number or special character, and be least 8 characters in length. ",
+          "toolTip": "Enter Password for the Database Username. Passwords will contain at least 1 upper case letter, at least 1 lower case letter, at least 1 number or special character, and be least 8 characters in length. ",
+          "type": "password",
+          "constraints": {
+            "required": true,
+            "hidden": false,
+            "allowedValues": [
+              {
+                "text": "(?=^.{8",
+                "value": "(?=^.{8"
+              },
+              {
+                "text": "}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$",
+                "value": "}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              }
+            ],
+            "hasDigit": false,
+            "hasLetter": false,
+            "hasUpperCaseLetter": false,
+            "hasLowerCaseLetter": false,
+            "hasPunctuation": false,
+            "numeric": false,
+            "custom": [
+              {
+                "key": "regEx",
+                "value": "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              }
+            ]
+          }
+        }
+      },
+      "hiddenParameters": {
+        "application Path": {
+          "type": "apppath",
+          "value": "[parameters('name')]"
+        },
+        "database Server": {
+          "type": "db",
+          "oldDBValue": "[parameters('DBServer')]",
+          "newMySQLDBValue": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('databaseName'))).hostname]",
+          "oldSqlDBValue": "[parameters('DBServer')]",
+          "newSQLValue": "[reference(concat('Microsoft.Sql/servers/', parameters('serverName'))).fullyQualifiedDomainName]"
+        },
+        "database Name": {
+          "type": "dbname",
+          "value": "[parameters('databaseName')]"
+        },
+        "database Administrator": {
+          "type": "db",
+          "oldDBValue": "[parameters('databaseUsername')]",
+          "newMySQLDBValue": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('databaseName'))).username]",
+          "oldSqlDBValue": "[parameters('administratorLogin')]",
+          "newSQLValue": "[parameters('administratorLogin')]"
+        },
+        "database Administrator Password": {
+          "type": "db",
+          "oldDBValue": "[parameters('databasePassword')]",
+          "newMySQLDBValue": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('databaseName'))).password]",
+          "oldSqlDBValue": "[parameters('administratorLoginPassword')]",
+          "newSQLValue": "[parameters('administratorLoginPassword')]"
+        }
+      }
+    }
+  }
+}

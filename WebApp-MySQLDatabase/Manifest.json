@@ -1,0 +1,48 @@
+{
+  "$schema": "https://gallery.azure.com/schemas/2014-09-01/manifest.json#",
+  "name": "WordPress",
+  "publisher": "WordPress",
+  "version": "1.0.0",
+  "displayName": "ms-resource:displayName",
+  "publisherDisplayName": "ms-resource:publisherDisplayName",
+  "publisherLegalName": "ms-resource:publisherDisplayName",
+  "summary": "ms-resource:summary",
+  "longSummary": "ms-resource:summary",
+  "description": "ms-resource:description",
+  "uiDefinition": {
+    "path": "UIDefinition.json"
+  },
+  "artifacts": [      
+    {
+      "name": "website_NewHostingPlan_MySQL_NewDB-Default",
+      "type": "Template",
+      "path": "DeploymentTemplates\\Website_NewHostingPlan_MySQL_NewDB-Default.json",
+      "isDefault": true
+    }
+  ],
+  "icons": {
+    "small": "Icons\\Small.png",
+    "medium": "Icons\\Medium.png",
+    "wide": "Icons\\Wide.png",
+    "large": "Icons\\Large.png"
+  },
+  "links": [
+    {
+      "displayName": "ms-resource:authorLink",
+      "uri": "http://wordpress.org/"
+    },
+    {
+      "displayName": "ms-resource:learnMoreLink",
+      "uri": "http://wordpress.org/support/"
+    }
+  ],
+  "screenshots": [
+    "Screenshots\\wordpress.png"
+  ],
+  "categories": [
+    "web",
+    "blogCms",
+    "hidden_csp",
+    "createv2"
+  ]  
+}
