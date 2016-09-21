@@ -1,5 +1,7 @@
 #Sample Packages for Onboarding to Azure Web Marketplace
 
+Check out this article to learn more about onboarding to [Azure Web Marketplace for Azure app service](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/26/onboarding-to-azure-web-marketplace/)
+
 These are samples that can be reference by build your own packages to submit to Azure Web marketplace. These samples only apply for Web category in the marketplace.
 
 ## Folder structure
