@@ -27,7 +27,7 @@
         { "name": "string", "type": "string", "path": "string", "isDefault": true } // max of 128 characters
     ],
     "icons": {
-        // see: https://auxdocs.azurewebsites.net/en-us/documentation/articles/gallery-items
+       
         "small": "string", // path to image file
         "medium": "string", // medium images must be 90x90 pixels if bitmaps...
         "large": "string", // 40x40

@@ -28,33 +28,26 @@
          }
       ],
       "parameters":{  
-         "emailService":{  
-            "defaultValue":"Gmail",
-            "parameterValue":"emailService",
-            "displayName":"EmailServiceName",
-            "hidden":true,
-            "description":"The email service that Ghost should use.",
-            "toolTip":"The email service that Ghost should use.",
+                     // This is optional and should be used iff you require the user to provide some information for the deployment of the template .These parameters will become AppSettings for the web app
+         "user-defined-list-pararmeter1":{  
+            "defaultValue":"default-value1",
+            "parameterValue":"user-defined-pararmeter1",
+            "displayName":"display text label",
+            "hidden":false,
+            "description":"text for the parameter",
+            "toolTip":"tool tip text",
             "type":"dropdown",
             "constraints":{  
                "required":true,
                "hidden":false,
                "allowedValues":[  
                   {  
-                     "text":"Gmail",
-                     "value":"Gmail"
+                     "text":"option1",
+                     "value":"value1"
                   },
                   {  
-                     "text":"Mailgun",
-                     "value":"Mailgun"
-                  },
-                  {  
-                     "text":"SendGrid",
-                     "value":"SendGrid"
-                  },
-                  {  
-                     "text":"Postmark",
-                     "value":"Postmark"
+                     "text":"option2",
+                     "value":"value2"
                   }
                ],
                "hasDigit":false,
@@ -68,37 +61,13 @@
                ]
             }
          },
-         "emailUsername":{  
-            "parameterValue":"emailUsername",
-            "displayName":"Email Username (Optional)",
+         "userdefined-textfield-optional-parameter":{  
+            "parameterValue":"userdefined-textfield-parameter",
+            "displayName":"display text label",
             "hidden":true,
-            "description":"The user of the email service.",
-            "toolTip":"The user of the email service.",
+            "description":"description of the input field",
+            "toolTip":"tool tip description",
             "type":"text",
-            "constraints":{  
-               "required":false,
-               "hidden":false,
-               "allowedValues":[  
-
-               ],
-               "hasDigit":false,
-               "hasLetter":false,
-               "hasUpperCaseLetter":false,
-               "hasLowerCaseLetter":false,
-               "hasPunctuation":false,
-               "numeric":false,
-               "custom":[  
-
-               ]
-            }
-         },
-         "emailPassword":{  
-            "parameterValue":"emailPassword",
-            "displayName":"Email Password (Optional)",
-            "hidden":true,
-            "description":"The password for the user of the email service.",
-            "toolTip":"The password for the user of the email service.",
-            "type":"password",
             "constraints":{  
                "required":false,
                "hidden":false,
