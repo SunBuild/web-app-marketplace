@@ -1,0 +1,121 @@
+{  
+   "$schema":"https://gallery.azure.com/schemas/2015-02-12/UIDefinition.json",
+   "createDefinition":{  
+      "createBlade":{  
+         "name":"CreateBlade",
+         "extension":"WebsitesExtension"
+      },
+      "startboardPart":{  
+         "name":"SingleWebsitePart",
+         "extension":"WebsitesExtension"
+      },
+      "startboardPartKeyId":"id"
+   },
+   "initialData":{  
+      "mySqlTypes":[  
+         "cleardb",
+         "local",
+         "orcas"
+      ],
+      "gitHubDeployment":{  
+         "repoUrl":"my-application-github-repo-url",
+         "branch":"branch-name"
+      },
+      "hiddenAppConfigSettings":[  
+         {  
+            "name":"myhiddenappsettings",
+            "value":"some-value"
+         }
+      ],
+      "parameters":{  
+         "emailService":{  
+            "defaultValue":"Gmail",
+            "parameterValue":"emailService",
+            "displayName":"EmailServiceName",
+            "hidden":true,
+            "description":"The email service that Ghost should use.",
+            "toolTip":"The email service that Ghost should use.",
+            "type":"dropdown",
+            "constraints":{  
+               "required":true,
+               "hidden":false,
+               "allowedValues":[  
+                  {  
+                     "text":"Gmail",
+                     "value":"Gmail"
+                  },
+                  {  
+                     "text":"Mailgun",
+                     "value":"Mailgun"
+                  },
+                  {  
+                     "text":"SendGrid",
+                     "value":"SendGrid"
+                  },
+                  {  
+                     "text":"Postmark",
+                     "value":"Postmark"
+                  }
+               ],
+               "hasDigit":false,
+               "hasLetter":false,
+               "hasUpperCaseLetter":false,
+               "hasLowerCaseLetter":false,
+               "hasPunctuation":false,
+               "numeric":false,
+               "custom":[  
+
+               ]
+            }
+         },
+         "emailUsername":{  
+            "parameterValue":"emailUsername",
+            "displayName":"Email Username (Optional)",
+            "hidden":true,
+            "description":"The user of the email service.",
+            "toolTip":"The user of the email service.",
+            "type":"text",
+            "constraints":{  
+               "required":false,
+               "hidden":false,
+               "allowedValues":[  
+
+               ],
+               "hasDigit":false,
+               "hasLetter":false,
+               "hasUpperCaseLetter":false,
+               "hasLowerCaseLetter":false,
+               "hasPunctuation":false,
+               "numeric":false,
+               "custom":[  
+
+               ]
+            }
+         },
+         "emailPassword":{  
+            "parameterValue":"emailPassword",
+            "displayName":"Email Password (Optional)",
+            "hidden":true,
+            "description":"The password for the user of the email service.",
+            "toolTip":"The password for the user of the email service.",
+            "type":"password",
+            "constraints":{  
+               "required":false,
+               "hidden":false,
+               "allowedValues":[  
+
+               ],
+               "hasDigit":false,
+               "hasLetter":false,
+               "hasUpperCaseLetter":false,
+               "hasLowerCaseLetter":false,
+               "hasPunctuation":false,
+               "numeric":false,
+               "custom":[  
+
+               ]
+            }
+         }
+      }
+   }
+}
