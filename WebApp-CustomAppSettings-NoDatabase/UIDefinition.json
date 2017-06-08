@@ -32,7 +32,7 @@
                     "defaultValue": "Gmail",
                     "parameterValue": "emailService",
                     "displayName": "EmailServiceName",
-                    "hidden": true,
+                    "hidden": false,
                     "description": "The email service that Ghost should use.",
                     "toolTip": "The email service that Ghost should use.",
                     "type": "dropdown",
@@ -69,7 +69,7 @@
                 "emailUsername": {
                     "parameterValue": "emailUsername",
                     "displayName": "Email Username (Optional)",
-                    "hidden": true,
+                    "hidden": false,
                     "description": "The user of the email service.",
                     "toolTip": "The user of the email service.",
                     "type": "text",
@@ -89,7 +89,7 @@
                 "emailPassword": {
                     "parameterValue": "emailPassword",
                     "displayName": "Email Password (Optional)",
-                    "hidden": true,
+                    "hidden": false,
                     "description": "The password for the user of the email service.",
                     "toolTip": "The password for the user of the email service.",
                     "type": "password",
