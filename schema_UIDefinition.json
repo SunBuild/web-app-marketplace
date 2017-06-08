@@ -12,23 +12,24 @@
       "startboardPartKeyId":"id"
    },
    "initialData":{  
-      "mySqlTypes":[  
+      "mySqlTypes":[  // This is optional. Add this property only if the app needs a MySQL database. 
          "cleardb",
          "local",
          "orcas"
       ],
-      "gitHubDeployment":{  
+      "sql": true,// This is optional . Add this only if the app needs SQL database
+      "gitHubDeployment":{  //Required for app deployment 
          "repoUrl":"my-application-github-repo-url",
          "branch":"branch-name"
       },
-      "hiddenAppConfigSettings":[  
+      "hiddenAppConfigSettings":[  //This is optional. Use this if your app needs to pass some hidden values to the application as app settings.
          {  
             "name":"myhiddenappsettings",
             "value":"some-value"
          }
       ],
       "parameters":{  
-                     // This is optional and should be used iff you require the user to provide some information for the deployment of the template .These parameters will become AppSettings for the web app
+        // This is optional and should be used iff you require the user to provide some information for the deployment of the template .These parameters will become AppSettings for the web app
          "user-defined-list-pararmeter1":{  
             "defaultValue":"default-value1",
             "parameterValue":"user-defined-pararmeter1",
