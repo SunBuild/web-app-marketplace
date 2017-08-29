@@ -57,13 +57,13 @@
                         "planId": "string", // max of 256 characters
                         "displayName": "string", // max of 256 characters full display name, includes os, version, etc.
                         "summary": "string", // max of 100 characters
-                        "description": "string", // max of 2000 characters. Can contain HTML
+                        "description": "string" // max of 2000 characters. Can contain HTML
                     }
                 ]
             }
         }
     ],
-    "screenshots": [ "string" ],
-    "categories": [ "webRecommended" ,"web" ,    "blogCms", "createv2"]
+    "screenshots": [ "Screenshots\\Home.png", "Screenshots\\Catalog.png", "Screenshots\\Articles.png"],
+    "categories": [ "webRecommended", "web", "blogCms", "createv2"]
     
 }
