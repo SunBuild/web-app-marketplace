@@ -63,7 +63,7 @@
             }
         }
     ],
-    "screenshots": [ "string" ],
+    "screenshots": [ "string" ], // For example  "Screenshots\\Home.png"
     "categories": [ "webRecommended" ,"web" ,    "blogCms", "createv2"]
     
 }
