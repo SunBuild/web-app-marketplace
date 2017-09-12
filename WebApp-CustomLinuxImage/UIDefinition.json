@@ -1,0 +1,39 @@
+{  
+   "$schema":"https://gallery.azure.com/schemas/2015-02-12/UIDefinition.json",
+   "createDefinition":{  
+      "createBlade":{  
+         "name":"CreateBlade",
+         "extension":"WebsitesExtension"
+      },
+      "startboardPart":{  
+         "name":"SingleWebsitePart",
+         "extension":"WebsitesExtension"
+      },
+      "startboardPartKeyId":"id"
+   },
+   "initialData":{  
+      "isLinux":true, ## Reuired if using app service on linux 
+      "mySqlTypes": ["cleardb","orcas","postgre"], ## Use this if the app is using a mysql or postgres database 
+      "galleryContainer":"appsvc/apps:apache-php-mysql-0.1",
+      "gitHubDeployment":{  ## Use this if you have application source code that is no part of docker image 
+         "repoUrl":"repo-url-for-yourapplication-code-if-needed",
+         "branch":"branch-name"
+      },
+      "appSettingsToSet":{  
+         "phpVersion":"7.0"
+      },
+      "hiddenAppConfigSettings":[  
+         {  
+            "name":"WEBSITE_ENABLE_APP_SERVICE_STORAGE", ## Set to false if image is not using app service storage
+            "value":"true"
+         }
+       
+      ],
+      "dbsettings":{   ## Use this if app requires a  mysql or postgres database 
+         "DATABASE_HOST":"127.0.0.1",
+         "DATABASE_NAME":"[concat(uniquestring(resourceGroup().id),'db')]",
+         "DATABASE_USERNAME":"wpadmin",
+         "DATABASE_PASSWORD":"[uniqueString(resourceGroup().id)]"
+      }
+   }
+}

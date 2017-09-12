@@ -1,0 +1,76 @@
+{
+    "parameters": {
+        "siteName": {
+            "type": "string"
+        },
+        "servicePlanName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "West US",
+            "allowedValues": [
+                "West US",
+                "West Europe",
+                "Southeast Asia"
+            ]
+        },
+        "sku": {
+            "type": "string",
+            "defaultValue": "S2",
+            "allowedValues": [
+                "B1",
+                "B2",
+                "B3",
+                "S1",
+                "S2",
+                "S3"
+            ]
+        }       
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites",
+            "name": "[parameters('siteName')]",
+            "properties": {
+                "siteConfig": {
+                    "linuxFxVersion": "appsvc/apps:apache-php-mysql-0.1"
+                    "appSettings": [
+                        {
+                            "name": "MY_CUSTOM_APP_SETTING",
+                            "value": "some-value"
+                        }
+                      
+                    ]
+                },
+                "name": "[parameters('siteName')]",
+                "serverFarmId": "[parameters('servicePlanName')]",
+                "hostingEnvironment": ""
+            },
+            "apiVersion": "2016-03-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[parameters('servicePlanName')]"
+            ]
+        },
+        {
+            "apiVersion": "2016-09-01",
+            "name": "[parameters('servicePlanName')]",
+            "type": "Microsoft.Web/serverfarms",
+            "location": "[parameters('location')]",
+            "properties": {
+                "name": "[parameters('servicePlanName')]",
+                "workerSizeId": "1",
+                "reserved": true,
+                "numberOfWorkers": "1",
+                "hostingEnvironment": ""
+            },
+            "sku": {
+                "Name": "[parameters('sku')]"
+            },
+            "kind": "linux"
+        }
+    ],
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0"
+}

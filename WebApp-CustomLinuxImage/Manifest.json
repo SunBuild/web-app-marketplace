@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gallery.azure.com/schemas/2014-09-01/manifest.json#",
+  "name": "MyApponlinux",
+  "publisher": "PublisherName",
+  "version": "1.0.0",
+  "displayName": "ms-resource:displayName",
+  "publisherDisplayName": "ms-resource:publisherDisplayName",
+  "publisherLegalName": "ms-resource:publisherDisplayName",
+  "summary": "ms-resource:summary",
+  "longSummary": "ms-resource:summary",
+  "description": "ms-resource:description",
+  "uiDefinition": {
+    "path": "UIDefinition.json"
+  },
+  "artifacts": [
+    {
+      "name": "Linux-custom-image-arm-template.json",
+      "type": "Template",
+      "path": "DeploymentTemplates\\Linux-custom-image-arm-template.json",
+      "isDefault": true
+    }
+  ],
+  "icons": {
+    "small": "Icons\\Small.png",
+    "medium": "Icons\\Medium.png",
+    "wide": "Icons\\Wide.png",
+    "large": "Icons\\Large.png"
+  },
+  "links": [
+    {
+      "displayName": "ms-resource:authorLink",
+      "uri": "http://wordpress.org/"
+    },
+    {
+      "displayName": "ms-resource:learnMoreLink",
+      "uri": "https://github.com/your-account/blob/master/your-docker-image/README.md"
+    }
+  ],
+  "categories": [
+    "web",
+    "blogCms",
+    "createv2",
+    "webRecommended",
+    "appServiceTemplate"
+  ]
+}
